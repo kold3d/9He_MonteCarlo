@@ -1,0 +1,72 @@
+LIST
+TRIG 100000000        
+DEBU 0 0 100000
+FIDX 1
+DCAY 1
+MULS 1
+PFIS 0
+MUNU 0
+LOSS 2
+PHOT 0
+COMP 0
+PAIR 0
+BREM 0
+RAYL 0
+DRAY 0
+ANNI 0
+HADR 0
+LABS 0
+STRA 0
+SYNC 0
+AUTO 0
+RTYP 3
+ANDI 0
+ENDI 0. 179.0 1.0
+TSTA 'S'
+CHNM 'M'
+GPRE 0.
+APDE 14.8 
+AANG 7.7 
+BANG 0.0 0.0 
+BENE 180. 0.0 
+BRAD 0.0 0.0
+RDET 0.9
+RNDM 16234775 13745555
+SWIT 2 4
+CUTS 0.00001 -0.000199 0.00001 0.00001 0.00001 0.00001 0.00001 10000. 10000. 0.01 10000.  
+END
+
+** Comment on key RTYP:
+** RTYP is used to define what reaction should be Simulated at
+** this time.
+** 1   1H(7Be,1H)7Be - elastic scattering.
+** 2   9Be(pi-,pi+)9He(g.s.,stable at +1.13 MeV) 
+** 3   9Be(pi-,pi+)(8He+n)
+
+** Comment on key ANDI:
+** If ANDI is set to 1, external angular distribution should be
+** taken from the file ang.dat (first coloumn is angle in degrees
+** second is the cross section in any units.) 
+** If ANDI is set to 0, Angular distribution for the reaction
+** will be constant. (Cross section is independent from angle).
+** Comments on ENDI key:
+** If ENDI 1 is set to 0. THEN
+**   Excitation function is a single peak with centroid and
+**   width set by ENDI 2 and 3. Width is FWHM.  
+
+** Comments on user defined parameters:
+** TSTA - defines the target state. L - liquid; S - solid; G - gas
+** Gpre - if TSTA=G Gpre defines gass pressure in mBar
+** LDEN - if TSTA=L LDEN defines density of liquid in g/cm^3
+** APDE - Distance between the detector(colimator actually)
+**        and the center of rotation. 
+** AANG - Lab. angle of the detector relative to the beam
+** BANG - Angular distribution of the beam, first is the avarage angle  
+**        (usually 0.), the second is angular spread (sigma). All in degrees 
+** BENE - Energy and energy spread of the beam; E0+/-dE (dE is gauss sigma)
+**        in MeV
+** BRAD - Beam radius(cm) on target or entrance window (depends on target state)
+**        If solid target is used - on target, gass or liquid - on window
+** RDET - Radius of the colimator on the face of the detector.
+**        Maximum is 1.5 cm, because detectors themself are 1.5 cm
+**        If larger radius is needed you should make changes in the code.
